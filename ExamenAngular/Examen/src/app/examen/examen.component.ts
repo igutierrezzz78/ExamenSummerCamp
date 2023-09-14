@@ -28,8 +28,8 @@ export class ExamenComponent implements OnInit, OnDestroy{
     {
     this.myForm = this.formulario.group({
       userName: ['',[Validators.required]],
-      password: ['',[Validators.required,Validators.minLength(8)]],
-      confirmarPassword: ['',[Validators.minLength(8)]],
+      password: ['',[Validators.required,Validators.minLength(9)]],
+      confirmarPassword: ['',[Validators.required]],
       apellido: ['',[Validators.required]],
       nombre: ['', [Validators.required,Validators.maxLength(50)]],
       telefono: ['', [Validators.maxLength(25)]],
@@ -40,8 +40,8 @@ export class ExamenComponent implements OnInit, OnDestroy{
   registro(myForm : FormGroup): void {
     const registroDTO: IUsuarioRegistro = {
       userName : myForm.value.userName,
-      password : myForm.value.password,
-      confirmarPassword : myForm.value.confirmarPassword,
+      password : '123456789',
+      confirmarPassword : '123456789',
       nombre: myForm.value.nombre,
       apellido: myForm.value.apellido,
       telefono: myForm.value.telefono,
