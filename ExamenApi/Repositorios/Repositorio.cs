@@ -24,6 +24,7 @@ namespace Repositorios
             List<Persona> listaMayoresDe21 = db.Persona
                 .AsEnumerable()
                 .Where(p => CalcularEdad(p.FechaNacimiento) > 21)
+                .OrderBy(n => n.Nombre)
                 .Take(10)
                 .ToList();
             return listaMayoresDe21;
